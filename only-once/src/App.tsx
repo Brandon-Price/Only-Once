@@ -16,7 +16,8 @@ function App() {
       document.head.appendChild(link);
 
       document.title = 'Closed, Sorry';
-    } else {
+    } 
+    else {
       const link = document.createElement('link');
       link.id = 'svg1';
       link.rel = 'icon';
