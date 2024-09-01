@@ -1,2 +1,2 @@
 # Only-Once
-A site that only lets you see the original contents once.
+This is a site that only allows a user to see the page once.
