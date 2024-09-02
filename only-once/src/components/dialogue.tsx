@@ -12,12 +12,12 @@ document.addEventListener("DOMContentLoaded", () => {
     type possibleDialogue = { 
         text: string;
         textSpeed: number;
-        classes?: string;
+        classes?: string[];
     }
 
     let dialogue: Array<possibleDialogue> = [
         {text: 'Hey!', textSpeed: speeds.slow},
-        {text: "What's up?", textSpeed: speeds.normal},
+        {text: "What's up?", textSpeed: speeds.normal, classes: ["bold"]},
         {text: "I'm great!", textSpeed: speeds.fast}
     ]
 
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 span: span,
                 isSpace: character === " ",
                 delayAfter: line.textSpeed,
-                classes: []
+                classes: line.classes || []
             })
         })
     })
@@ -46,6 +46,10 @@ document.addEventListener("DOMContentLoaded", () => {
     function revealCharacters(list: any){
         let next = list.splice(0, 1)[0];
         next.span.classList.add("revealed");
+
+        next.classes.forEach((c:any) => {
+            next.span.classList.add(c);
+        })
 
         var delay = next.isSpace ? 0 : next.delayAfter;
 

@@ -25,6 +25,10 @@ body {
     opacity: 0;
 }
 
+.text span.bold{
+    font-weight: bold;
+}
+
 .text span.revealed{
     opacity: 1;
 }

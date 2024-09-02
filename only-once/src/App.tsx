@@ -27,7 +27,7 @@ function App() {
       document.title = 'Welcome';
       // Timeout for cookie, render happens to fast
       setTimeout(() => {
-        setCookie('cookie', 'hasCookie');
+        setCookie('cookie', 'hasCookie', {sameSite: "None", secure: true});
       }, 1000);
     }
 
