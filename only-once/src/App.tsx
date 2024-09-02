@@ -1,33 +1,44 @@
 import { useState, useEffect } from 'react'
+import { getCookie, setCookie } from 'typescript-cookie'
 import './styles/App.css'
 
 function App() {
+  const [hasCookie, setHasCookie] = useState(false);
 
-  const user: string = 'hasCookie';
-
-  // Logic that will roughly be used to handle the some of the pages elements
+  // Set the state of whether there is a cookie or not
   useEffect(() => {
-    if(user == 'hasCookie'){
-      const link = document.createElement('link');
-      link.id = 'svg1';
-      link.rel = 'icon';
-      link.type = 'image/svg+xml';
-      link.href = '/alt.svg';
-      document.head.appendChild(link);
-
-      document.title = 'Closed, Sorry';
-    } 
-    else {
-      const link = document.createElement('link');
-      link.id = 'svg1';
-      link.rel = 'icon';
-      link.type = 'image/svg+xml';
-      link.href = '/backpack.svg';
-      document.head.appendChild(link);
-
-      document.title = 'Welcome';
+    if (getCookie('cookie') === 'hasCookie') {
+      setHasCookie(true);
     }
-  }, [user])
+  }, []);
+
+  useEffect(() => {
+    const link = document.createElement('link');
+    link.id = 'svg1';
+    link.rel = 'icon';
+    link.type = 'image/svg+xml';
+
+    if (hasCookie) {
+      link.href = '/alt.svg';
+      document.title = 'Closed, Sorry';
+    } else {
+      link.href = '/backpack.svg';
+      document.title = 'Welcome';
+      // Timeout for cookie, render happens to fast
+      setTimeout(() => {
+        setCookie('cookie', 'hasCookie');
+      }, 1000);
+    }
+
+    document.head.appendChild(link);
+
+    return () => {
+      const existingLink = document.getElementById('svg1');
+      if (existingLink) {
+        document.head.removeChild(existingLink);
+      }
+    };
+  }, [hasCookie]);
 
   return (
     <div>
