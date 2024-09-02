@@ -21,10 +21,10 @@ function App() {
 
     if (hasCookie) {
       link.href = '/alt.svg';
-      document.title = 'Closed, Sorry';
+      document.title = "There's no one here";
     } else {
-      link.href = '/backpack.svg';
-      document.title = 'Welcome';
+      link.href = '/default.svg';
+      document.title = 'Hey! Enjoy the fire';
       // Timeout for cookie, render happens to fast
       setTimeout(() => {
         setCookie('cookie', 'hasCookie', {sameSite: "None", secure: true});
@@ -43,6 +43,7 @@ function App() {
 
   return (
     <div>
+      <img src="https://media1.tenor.com/m/5hQZxF2gzEsAAAAC/pixel-bonfire-pixel-fire.gif" alt="Campfire" style={{}}></img>
       <Main/>
     </div>
   )

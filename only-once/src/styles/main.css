@@ -1,28 +1,27 @@
-html {
-    font-size: 18px;
-  }
 body {
     color:black;
-    font-family: "Questrial", sans-serif;
-    background-color: #637aff;
+    background-color: #222034;
     background-size: 60px 60px;
     background-position: 0 0;
 }
 
 .text{
     position: absolute;
-    left: 50%;
-    top: 50%;
+    bottom: 70%;
+    right: 10%;
     transform: translate(-50%, -50%);
     padding: 1.6rem 3rem;
     border: 3px solid black;
     border-radius: 5px;
-    background: white;
+    background: hsla(0, 0%, 12%, 0.25);
     box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .text span{
     opacity: 0;
+    color: white;
+    font-family: "Tiny5", sans-serif;
+    font-size: 20px;
 }
 
 .text span.bold{
