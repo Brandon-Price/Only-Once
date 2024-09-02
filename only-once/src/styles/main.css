@@ -2,13 +2,12 @@ body {
     color:black;
     background-color: #222034;
     background-size: 60px 60px;
-    background-position: 0 0;
 }
 
 .text{
-    position: absolute;
-    bottom: 70%;
-    right: 45%;
+    position:absolute;
+    top: 15%;
+    left: 50%;
     transform: translate(-50%, -50%);
     padding: 1.6rem 3rem;
     border: 3px solid black;
