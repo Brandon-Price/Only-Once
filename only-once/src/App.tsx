@@ -1,6 +1,7 @@
-import { useState, useEffect } from 'react'
-import { getCookie, setCookie } from 'typescript-cookie'
-import './styles/App.css'
+import { useState, useEffect } from 'react';
+import { getCookie, setCookie } from 'typescript-cookie';
+import './styles/App.css';
+import Main from "./components/main";
 
 function App() {
   const [hasCookie, setHasCookie] = useState(false);
@@ -42,7 +43,7 @@ function App() {
 
   return (
     <div>
-      <p>Hello</p>
+      <Main/>
     </div>
   )
 }
