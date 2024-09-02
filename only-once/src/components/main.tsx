@@ -1,9 +1,10 @@
 import './dialogue';
+import '../styles/main.css';
 
 
 function Main () {
     return(
-        <div style={{color:"black"}} id='text'>
+        <div id='text'>
 
         </div>
     )

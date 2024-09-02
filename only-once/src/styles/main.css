@@ -1,0 +1,7 @@
+#text span{
+    opacity: 0;
+}
+
+#text span.revealed{
+    opacity: 1;
+}

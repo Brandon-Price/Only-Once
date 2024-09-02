@@ -8,20 +8,19 @@ const speeds = {
     fast: 40
 }
 
-// Dialogue should just be text and how fast he will speak (how fast the text will appear on screen)
 type possibleDialogue = { 
     text: string;
     textSpeed: number;
+    classes?: string;
 }
 
-// All of the possible text of the npc
 let dialogue: Array<possibleDialogue> = [
     {text: 'Hey', textSpeed: speeds.slow},
     {text: "What's up", textSpeed: speeds.normal},
     {text: "I'm great!", textSpeed: speeds.fast}
 ]
 
-let textCharacters: Array<string> = [];
+let textCharacters: any = [];
 
 dialogue.forEach((line, index) => {
 
@@ -34,5 +33,26 @@ dialogue.forEach((line, index) => {
         var span = document.createElement("span");
         span.textContent = character;
         container?.appendChild(span);
+        textCharacters.push({
+            span: span,
+            isSpace: character === " ",
+            delayAfter: line.textSpeed,
+            classes: []
+        })
     })
 })
+
+function revealCharacters(list: any){
+    let next = list.splice(0, 1)[0];
+    next.span.classList.add("revealed");
+
+    var delay = next.isSpace ? 0 : next.delayAfter;
+
+    if(list.length > 0){
+        setTimeout(function(){
+            revealCharacters(list);
+        }, delay)
+    }
+}
+
+revealCharacters(textCharacters);
