@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { getCookie, setCookie } from 'typescript-cookie';
 import './styles/App.css';
 import Main from "./components/main";
+import SecretCodeListener from './components/secret';
 
 function App() {
   const [hasCookie, setHasCookie] = useState(false);
@@ -28,7 +29,7 @@ function App() {
       // Timeout for cookie, render happens to fast
       setTimeout(() => {
         setCookie('cookie', 'hasCookie', {sameSite: "None", secure: true});
-        setCookie('token', 'Secret: What does', {sameSite: "None", secure: true})
+        setCookie('token', 'Secret: I speak without a mouth and hear without ears. I have no body, but I come alive with wind. What am I? ', {sameSite: "None", secure: true})
       }, 1000);
     }
 
@@ -45,7 +46,7 @@ function App() {
   return (
     <div className='container'>
       { hasCookie ? 
-      null
+      <SecretCodeListener/>
       : <>
           <img src="https://media1.tenor.com/m/5hQZxF2gzEsAAAAC/pixel-bonfire-pixel-fire.gif" alt="Campfire"></img>
           <Main/>
