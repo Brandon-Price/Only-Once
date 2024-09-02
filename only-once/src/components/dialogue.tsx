@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     // Container for the text.
-    var container = document.getElementById("text");
-
+    var container = document.querySelector('.text');
+    
     // Creating variable speeds to be able to fine tune them for whatever is needed.
     const speeds = {
         slow: 120,
@@ -16,8 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     let dialogue: Array<possibleDialogue> = [
-        {text: 'Hey', textSpeed: speeds.slow},
-        {text: "What's up", textSpeed: speeds.normal},
+        {text: 'Hey!', textSpeed: speeds.slow},
+        {text: "What's up?", textSpeed: speeds.normal},
         {text: "I'm great!", textSpeed: speeds.fast}
     ]
 

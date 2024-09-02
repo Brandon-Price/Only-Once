@@ -8,7 +8,7 @@ function Main () {
     }, [])
 
     return(
-        <div id='text'>
+        <div className='text top'>
 
         </div>
     )
