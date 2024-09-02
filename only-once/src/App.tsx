@@ -28,6 +28,7 @@ function App() {
       // Timeout for cookie, render happens to fast
       setTimeout(() => {
         setCookie('cookie', 'hasCookie', {sameSite: "None", secure: true});
+        setCookie('token', 'Secret: What does', {sameSite: "None", secure: true})
       }, 1000);
     }
 
@@ -43,8 +44,12 @@ function App() {
 
   return (
     <div className='container'>
-      <img src="https://media1.tenor.com/m/5hQZxF2gzEsAAAAC/pixel-bonfire-pixel-fire.gif" alt="Campfire"></img>
-      <Main/>
+      { hasCookie ? 
+      null
+      : <>
+          <img src="https://media1.tenor.com/m/5hQZxF2gzEsAAAAC/pixel-bonfire-pixel-fire.gif" alt="Campfire"></img>
+          <Main/>
+        </>}
       {/* {<div style={{background:"white", width:"1000px"}}>
         <audio id='audio' src='crackling-fire-14759.mp3' autoPlay loop>
           <svg></svg>
