@@ -1,6 +1,7 @@
 # Only-Once
 This is a site that only allows a user to see the page once. Once you leave the page or refresh you won't see the content again.
 
+Only works on desktop, no plans for mobile.
 _______________________________
 Still under construction:
 - ~~Need to make the main content of the page, won't be anything crazy.~~
