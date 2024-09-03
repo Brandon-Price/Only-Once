@@ -32,9 +32,19 @@ document.addEventListener("DOMContentLoaded", () => {
             {text: "secret here?", textSpeed: speeds.slow, classes: ["bold"]}
         ],
         [
-            {text: 'Come back', textSpeed: speeds.normal},
-            {text: "later to answer the", textSpeed: speeds.normal},
-            {text: "question.", textSpeed: speeds.normal, classes: ["bold"]}
+            {text: 'Come back', textSpeed: speeds.fast},
+            {text: "later to answer the", textSpeed: speeds.fast},
+            {text: "question.", textSpeed: speeds.fast, classes: ["bold"]}
+        ],
+        [
+            {text: 'The forest of your soul can be', textSpeed: speeds.normal},
+            {text: "found in the", textSpeed: speeds.normal},
+            {text: "deep roots of the wilderness.", textSpeed: speeds.normal, classes: ["bold"]}
+        ],
+        [
+            {text: 'Let the wilderness draw', textSpeed: speeds.normal},
+            {text: "you hither on", textSpeed: speeds.normal},
+            {text: "life's joruney.", textSpeed: speeds.normal, classes: ["bold"]}
         ]
     ]
 
@@ -43,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if(container){
             container.innerHTML = '';
         }
-
+        
         let dialogue = dialogues[Math.floor(Math.random() * dialogues.length)];
 
         let textCharacters: any = [];
