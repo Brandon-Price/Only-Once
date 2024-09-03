@@ -35,7 +35,7 @@ const SecretCodeListener: React.FC = () => {
 
     return (
         <div className='darkness'>
-            <img src='../public/Burntout.png'></img>
+            <img src='./public/Burntout.png'></img>
         </div>
     );
 };

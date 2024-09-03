@@ -21,10 +21,10 @@ function App() {
     link.type = 'image/svg+xml';
 
     if (hasCookie) {
-      link.href = '/alt.svg';
+      link.href = './alt.svg';
       document.title = "There's no one here";
     } else {
-      link.href = '/default.svg';
+      link.href = './default.svg';
       document.title = 'Hey! Enjoy the fire';
       // Timeout for cookie, render happens to fast
       setTimeout(() => {
