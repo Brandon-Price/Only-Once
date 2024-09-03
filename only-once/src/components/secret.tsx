@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import '../styles/secret.css'
 
 const SecretCodeListener: React.FC = () => {
     const [inputSequence, setInputSequence] = useState('');
     const secretCode = 'echo'; // Define your secret code here
-    
+
     useEffect(() => {
         const handleKeyDown = (event: KeyboardEvent) => {
             setInputSequence((prev) => {
@@ -22,9 +23,17 @@ const SecretCodeListener: React.FC = () => {
         };
     }, []);
 
-    return (
-        <div>
+    useEffect(() => {
+        document.body.classList.add('darkness');
+        // Clean up the page
+        return() => {
+            document.body.classList.remove('darkness')
+        }
+    }, []);
 
+    return (
+        <div className='darkness'>
+            <img src='../public/Burntout.png'></img>
         </div>
     );
 };
