@@ -16,6 +16,8 @@ const SecretCodeListener: React.FC = () => {
                 return newSequence;
             });
         };
+        
+        console.log(inputSequence);
 
         window.addEventListener('keydown', handleKeyDown);
         return () => {
